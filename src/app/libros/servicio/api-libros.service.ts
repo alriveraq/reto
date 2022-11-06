@@ -36,4 +36,12 @@ export class ApiLibrosService {
   public llibroid  (id: number): Observable<Libroconid | null>{
     return this.httpclient.get<Libroconid | null>(`${this.url}/${id}`);
   }
+
+  public mLibroid(id: number, payload: LibroParcial): Observable<any>{
+    return this.httpclient.patch(`${this.url}/${id}`, payload, {
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
+  }
 }

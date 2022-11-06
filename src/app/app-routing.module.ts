@@ -17,7 +17,12 @@ const routes: Routes = [
   {
     path: 'libro/:idLibros',
     loadChildren: () => import('./libros/libro/libro.module').then( m => m.LibroPageModule)
+  },
+  {
+    path: 'modificar/:idLibros',
+    loadChildren: () => import('./libros/modificar/modificar.module').then( m => m.ModificarPageModule)
   }
+
 ];
 
 @NgModule({
