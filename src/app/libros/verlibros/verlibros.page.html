@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>verlibros</ion-title>
+  </ion-toolbar>
+  <ion-button [routerLink]="['agregar']">Agregar</ion-button>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let li of libros">
+    <ion-img [src]="li.imagen"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Autor: {{li.autor}}</ion-card-subtitle>
+      <ion-card-title>{{li.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-content>Descripcion: {{li.descripcion}}</ion-card-content>
+      <ion-card-content>Idioma: {{li.idioma}}</ion-card-content>
+      <ion-card-content>
+        <ion-button [routerLink]="['eliminar', li.id]">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+        <ion-button [routerLink]="['libro', li.id]">
+          ver libros
+        </ion-button>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

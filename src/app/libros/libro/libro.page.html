@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>libro</ion-title>
+    <ion-button [routerLink]="['']">volver</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="libro">
+    <ion-img [src]="libro.imagen"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Autor: {{libro.autor}}</ion-card-subtitle>
+      <ion-card-title>{{libro.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-content>Descripcion: {{libro.descripcion}}</ion-card-content>
+      <ion-card-content>Idioma: {{libro.idioma}}</ion-card-content>
+      <ion-card-content>Editorial: {{libro.editorial}}</ion-card-content>
+      <ion-card-content>Año: {{libro.ano}}</ion-card-content>
+      <ion-card-content>Paginas: {{libro.paginas}}</ion-card-content>
+      <ion-card-content>Dimensiones: {{libro.dimensiones}}</ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

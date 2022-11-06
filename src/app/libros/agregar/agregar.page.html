@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>agregar</ion-title>
+    <ion-button [routerLink]="['']">volver</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formu" novalidate (ngSubmit)="gimg()" >
+    <ion-item>
+      <ion-label>Imagen</ion-label>
+      <ion-input [disabled]="imgcargando" (change)="cfoto($event)" type="file" formControlName="imagen"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('imagen').invalid  && label('imagen').errors && label('imagen').errors.required && dirty('imagen') "
+      >
+        Este campo es requerido
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('nombre').invalid  && label('nombre').errors && label('nombre').errors.required && dirty('nombre') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('nombre').invalid  && label('nombre').errors && label('nombre').errors.minlength && dirty('nombre') "
+      >
+        Los caracteres minimos son 5
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('nombre').invalid  && label('nombre').errors && label('nombre').errors.maxlength && dirty('nombre') "
+      >
+        Los caracteres maximos son 50
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Autor</ion-label>
+      <ion-input type="text" formControlName="autor"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('autor').invalid  && label('autor').errors && label('autor').errors.required && dirty('autor') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('autor').invalid  && label('autor').errors && label('autor').errors.minlength && dirty('autor') "
+      >
+        Los caracteres minimos son 5
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('autor').invalid  && label('autor').errors && label('autor').errors.maxlength && dirty('autor') "
+      >
+        Los caracteres maximos son 50
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripcion</ion-label>
+      <ion-input type="text" formControlName="descripcion"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('descripcion').invalid  && label('descripcion').errors && label('descripcion').errors.required && dirty('descripcion') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('descripcion').invalid  && label('descripcion').errors && label('descripcion').errors.minlength && dirty('descripcion') "
+      >
+        Los caracteres minimos son 10
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('descripcion').invalid  && label('descripcion').errors && label('descripcion').errors.maxlength && dirty('descripcion') "
+      >
+        Los caracteres maximos son 250
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Editorial</ion-label>
+      <ion-input type="text" formControlName="editorial"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('editorial').invalid  && label('editorial').errors && label('editorial').errors.required && dirty('editorial') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('editorial').invalid  && label('editorial').errors && label('editorial').errors.minlength && dirty('editorial') "
+      >
+        Los caracteres minimos son 5
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('editorial').invalid  && label('editorial').errors && label('editorial').errors.maxlength && dirty('editorial') "
+      >
+        Los caracteres maximos son 50
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Año</ion-label>
+      <ion-input type="number" formControlName="ano"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Idioma</ion-label>
+      <ion-input type="text" formControlName="idioma"></ion-input>
+      <ion-note
+      slot="error"
+        *ngIf="label('idioma').invalid  && label('idioma').errors && label('idioma').errors.required && dirty('idioma') "
+      >
+        Este campo es requerido
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('idioma').invalid  && label('idioma').errors && label('idioma').errors.minlength && dirty('idioma') "
+      >
+        Los caracteres minimos son 3
+      </ion-note>
+      <ion-note
+      slot="error"
+        *ngIf="label('idioma').invalid  && label('idioma').errors && label('idioma').errors.maxlength && dirty('idioma') "
+      >
+        Los caracteres maximos son 15
+      </ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Paginas</ion-label>
+      <ion-input type="number" formControlName="paginas"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>dimensiones</ion-label>
+      <ion-input type="text" formControlName="dimensiones"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button [disabled]="formu.invalid||imgcargando" type="submit">
+        Guardar
+      </ion-button>
+    </ion-item>
+  </form>
+</ion-content>
