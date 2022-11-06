@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Libroconid } from '../modelo/libros';
 import {ApiLibrosService} from './../servicio/api-libros.service';
 
@@ -12,7 +11,6 @@ export class VerlibrosPage implements OnInit {
   public libros: Array<Libroconid> = [];
   constructor(
     private apilibros: ApiLibrosService,
-    private router: Router
   ) { }
 
   ngOnInit() {

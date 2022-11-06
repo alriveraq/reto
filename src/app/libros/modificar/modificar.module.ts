@@ -8,13 +8,15 @@ import { ModificarPageRoutingModule } from './modificar-routing.module';
 
 import { ModificarPage } from './modificar.page';
 import { ApiLibrosService } from './../servicio/api-libros.service'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     IonicModule,
-    ModificarPageRoutingModule
+    ModificarPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [ModificarPage],
   providers: [ApiLibrosService]
