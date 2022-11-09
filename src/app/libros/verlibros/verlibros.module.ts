@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { VerlibrosPageRoutingModule } from './verlibros-routing.module';
 
 import { VerlibrosPage } from './verlibros.page';
-import { ApiLibrosService } from '../servicio/api-libros.service';
+import { ApiLibrosService} from '../servicio/api-libros.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

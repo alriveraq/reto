@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import {ApiLibrosService} from './../servicio/api-libros.service';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
-import {Libros} from './../modelo/libros'
 import { Router } from '@angular/router';
 
 @Component({
@@ -48,7 +47,6 @@ export class AgregarPage{
     reader.readAsDataURL(img);
     reader.onload = () => {
       this.imgcargando = false;
-      console.log('Carga terminada');
       this.img64 = reader.result as string;
     }
   }
@@ -64,7 +62,7 @@ export class AgregarPage{
       if(resultado){
         this.formu.reset();
         this.formu.updateValueAndValidity();
-        alert('imagen guardada');
+        alert('Libro guardado');
         this.router.navigate(['']);
       }
     })

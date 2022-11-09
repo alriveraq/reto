@@ -10,7 +10,9 @@ export class ApiLibrosService {
   private url = 'http://localhost:3000/libros'
   private pag = 1;
   private lista = new BehaviorSubject<Array<Libroconid>>([]);
+  public productList = new BehaviorSubject<any>([]);
   public listalibro$ = this.lista.asObservable();
+  private listacarro$ = this.productList.asObservable();
   constructor(
     private httpclient: HttpClient
   ){ }
@@ -33,15 +35,21 @@ export class ApiLibrosService {
     return this.httpclient.delete(`${this.url}/${id}`)
   }
 
-  public llibroid  (id: number): Observable<Libroconid | null>{
+  public llibroid  (id: number): Observable<Libroconid | null>{ //ver libros por id
     return this.httpclient.get<Libroconid | null>(`${this.url}/${id}`);
   }
 
-  public mLibroid(id: number, payload: LibroParcial): Observable<any>{
+  public mLibroid(id: number, payload: LibroParcial): Observable<any>{ //modificar
     return this.httpclient.patch(`${this.url}/${id}`, payload, {
       headers: {
         'Content-Type': 'application/json; charset=utf-8'
       }
     })
+  }
+
+  public acarrito (l : any){
+    this.listacarro$.push(l)
+    this.lista.next(this.listacarro$)
+    console.log(this.listacarro$)
   }
 }

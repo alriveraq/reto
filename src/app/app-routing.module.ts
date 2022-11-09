@@ -21,7 +21,14 @@ const routes: Routes = [
   {
     path: 'modificar/:idLibros',
     loadChildren: () => import('./libros/modificar/modificar.module').then( m => m.ModificarPageModule)
-  }
+  },
+  {
+    path: 'carro',
+    loadChildren: () => import('./libros/carro/carro.module').then( m => m.CarroPageModule)
+  },
+
+
+
 
 ];
 

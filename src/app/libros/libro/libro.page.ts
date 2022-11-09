@@ -31,5 +31,7 @@ export class LibroPage implements OnInit {
       })
     })
   }
-
+  acarro(libro: any){
+    this.apilibro.acarrito(libro)
+  }
 }

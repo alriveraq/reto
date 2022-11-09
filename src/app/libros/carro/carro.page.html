@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>carro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of l; let i = index">
+    <ion-img [src]="l.imagen"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Autor: {{l.autor}}</ion-card-subtitle>
+      <ion-card-title>{{l.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-content>Descripcion: {{l.descripcion}}</ion-card-content>
+      <ion-card-content>Idioma: {{l.idioma}}</ion-card-content>
+      <ion-card-content>Editorial: {{l.editorial}}</ion-card-content>
+      <ion-card-content>Año: {{l.ano}}</ion-card-content>
+      <ion-card-content>Paginas: {{l.paginas}}</ion-card-content>
+      <ion-card-content>Dimensiones: {{l.dimensiones}}</ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
