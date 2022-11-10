@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Libroconid } from '../modelo/libros';
 import {ApiLibrosService} from './../servicio/api-libros.service';
+import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-verlibros',
@@ -8,6 +9,8 @@ import {ApiLibrosService} from './../servicio/api-libros.service';
   styleUrls: ['./verlibros.page.scss'],
 })
 export class VerlibrosPage implements OnInit {
+  @ViewChild(IonInfiniteScroll)
+  public scroll: IonInfiniteScroll;
   public libros: Array<Libroconid> = [];
   constructor(
     private apilibros: ApiLibrosService,
@@ -19,6 +22,12 @@ export class VerlibrosPage implements OnInit {
     this.apilibros.llibro()
     this.apilibros.listalibro$.subscribe(datosac => {
       this.libros = datosac;
-    })
+      if(this.scroll){
+        this.scroll.complete();
+    }})
+  }
+
+  public cargarMElem(){
+    this.apilibros.cargarMElem();
   }
 }

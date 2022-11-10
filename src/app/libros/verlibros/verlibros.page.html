@@ -25,4 +25,9 @@
       </ion-card-content>
     </ion-card-content>
   </ion-card>
+  <ion-infinite-scroll (ionInfinite)="cargarMElem()">
+    <ion-infinite-scroll-content loadingText="Cargando mas datos...">
+
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

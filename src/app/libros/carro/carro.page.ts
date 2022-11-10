@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiLibrosService} from './../servicio/api-libros.service';
 
+
 @Component({
   selector: 'app-carro',
   templateUrl: './carro.page.html',
@@ -18,10 +19,9 @@ export class CarroPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    this.apilibros.llibro()
-    this.apilibros.listacarro$.subscribe(datosac => {
-      this.libros = datosac;
+    this.apilibros.librocarro().subscribe(res=> {
+      this.libros =res;
     })
-  }
 
+}
 }
